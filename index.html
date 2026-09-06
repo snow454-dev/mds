@@ -505,7 +505,7 @@
     <button type="button" class="btn ghost close-b" id="closeModal2">閉じる</button>
 
     <div class="done" id="done" hidden>
-      <h3>あと1ステップです</h3>
+      <h3>ありがとうございます</h3>
       <p id="doneText"></p>
       <p class="fig-cap" style="margin-top:14px">お送りいただいた内容は hello@aisupports.cc で確認し、1営業日以内にご返信します。</p>
     </div>
@@ -532,6 +532,12 @@
 
 <script>
 (function(){
+  // ▼ ここにFormspreeのエンドポイントを貼るとフォーム内で送信が完結します
+  //    例: 'https://formspree.io/f/abcdwxyz'
+  //    空のままだとメールソフトを開く方式で動作します
+  const FORM_ENDPOINT = 'https://formspree.io/f/myeydjaz';
+  const MAIL_TO = 'hello@aisupports.cc';
+
   const $=id=>document.getElementById(id);
   const init=$('init'),annual=$('annual'),rate=$('rate'),years=$('years'),run=$('run'),result=$('result');
   const JP=0.002, MIN=220;
@@ -664,17 +670,46 @@
     io.observe(trigger);
   }
 
-  submitBtn.addEventListener('click',()=>{
-    const name=$('mName').value.trim(), mail=$('mMail').value.trim(), tel=$('mTel').value.trim();
-    const sim = data ? '試算条件: 初回'+(+init.value||0)+'万円 / 毎年'+(+annual.value||0)+'万円 / 年'+data.r+'% / '+years.value+'年' : '試算なし';
-    const body=['お名前: '+name,'メールアドレス: '+mail,'電話番号: '+tel,'ご職業: '+mjob,
-      'ご希望の日時: '+slot,'','---',sim,'送信元: '+location.href].join('\r\n');
-    location.href='mailto:hello@aisupports.cc'
-      +'?subject='+encodeURIComponent('【面談申込】'+name+'様 '+slot)
-      +'&body='+encodeURIComponent(body);
-    $('doneText').innerHTML='メールソフトが開きます。内容をご確認のうえ、そのまま送信してください。<br>開かない場合は <b>hello@aisupports.cc</b> まで直接ご連絡ください。';
+  function payload(){
+    const sim = data
+      ? '初回'+(+init.value||0)+'万円 / 毎年'+(+annual.value||0)+'万円 / 年'+data.r+'% / '+years.value+'年'
+      : '試算なし';
+    return {
+      name:$('mName').value.trim(), email:$('mMail').value.trim(), tel:$('mTel').value.trim(),
+      job:mjob, slot:slot, simulation:sim, page:location.href,
+      _subject:'【面談申込】'+$('mName').value.trim()+'様 '+slot
+    };
+  }
+  function showDone(html){
+    $('doneText').innerHTML=html;
     document.querySelectorAll('.modal > :not(.done):not(.close)').forEach(el=>el.hidden=true);
     $('done').hidden=false;
+  }
+  function mailFallback(d){
+    const body=['お名前: '+d.name,'メールアドレス: '+d.email,'電話番号: '+d.tel,'ご職業: '+d.job,
+      'ご希望の日時: '+d.slot,'','---','試算条件: '+d.simulation,'送信元: '+d.page].join('\r\n');
+    location.href='mailto:'+MAIL_TO+'?subject='+encodeURIComponent(d._subject)+'&body='+encodeURIComponent(body);
+    showDone('メールソフトが開きます。内容をご確認のうえ、そのまま送信してください。<br>開かない場合は <b>'+MAIL_TO+'</b> まで直接ご連絡ください。');
+  }
+
+  submitBtn.addEventListener('click',async()=>{
+    const d=payload();
+    if(!FORM_ENDPOINT){ mailFallback(d); return; }
+    const label=submitBtn.textContent;
+    submitBtn.disabled=true; submitBtn.textContent='送信中…';
+    try{
+      const res=await fetch(FORM_ENDPOINT,{method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(d)});
+      if(!res.ok) throw new Error('status '+res.status);
+      showDone('<b>'+d.name+'</b> 様<br>'+d.slot+'　オンライン15分<br><br>ご予約を受け付けました。');
+    }catch(err){
+      submitBtn.disabled=false; submitBtn.textContent=label;
+      let e=$('sendErr');
+      if(!e){ e=document.createElement('p'); e.id='sendErr'; e.className='mnote';
+        submitBtn.parentNode.insertBefore(e,submitBtn); }
+      e.innerHTML='送信できませんでした。通信環境をご確認のうえ、もう一度お試しください。<br>解決しない場合は <b>'+MAIL_TO+'</b> まで直接ご連絡ください。';
+    }
   });
 })();
 </script>
