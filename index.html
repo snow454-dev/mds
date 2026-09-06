@@ -105,6 +105,12 @@
   details p{margin-top:12px;color:var(--ink-2)}
 
   .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .cta-final{background:var(--ink);color:#fff;padding:80px 0;text-align:center}
+  .cta-final h2{color:#fff}
+  .cta-final .lead{color:#C9D2E0;margin:0 auto 32px;max-width:34em}
+  .cta-final .btn.big{background:#fff;color:var(--ink);font-size:1.15rem;padding:22px 48px}
+  .cta-final .btn.big:hover{background:#EEF2F6}
+  .cta-final .cta-sub{color:#9FB0C9;font-size:.85rem;margin:18px auto 0;max-width:34em}
   footer{padding:32px 0;font-size:.8rem;color:var(--ink-2);border-top:1px solid var(--line)}
   footer p{max-width:none;margin-bottom:8px}
 
@@ -499,16 +505,25 @@
     <button type="button" class="btn ghost close-b" id="closeModal2">閉じる</button>
 
     <div class="done" id="done" hidden>
-      <h3>予約を受け付けました</h3>
+      <h3>あと1ステップです</h3>
       <p id="doneText"></p>
-      <p class="fig-cap" style="margin-top:14px">※これはモックアップです。実際の送信は行われていません。</p>
+      <p class="fig-cap" style="margin-top:14px">お送りいただいた内容は hello@aisupports.cc で確認し、1営業日以内にご返信します。</p>
     </div>
   </div>
 </div>
 
+<section class="cta-final">
+  <div class="wrap">
+    <h2>ドバイで口座を持ちたい方へ</h2>
+    <p class="lead">必要書類と口座の種類は、ご職業や資金の出所によって変わります。オンラインで15分ほど、無料でご説明します。</p>
+    <button type="button" class="btn big" id="openModal2">15分程度の面談が可能です</button>
+    <p class="cta-sub">ご相談は無料。開設の見込みがない場合は、その場でお伝えして終わります。</p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <p>AISupports ／ 北海道 ／ MARS DS W.L.L.（MDS Group）正規代理店</p>
+    <p>AISupports ／ 北海道 ／ MARS DS W.L.L.（MDS Group）正規代理店 ／ お問い合わせ：<a href="mailto:hello@aisupports.cc">hello@aisupports.cc</a></p>
     <p>本ページは銀行口座開設の手続きサポートに関する案内であり、金利・口座機能・カード発行・最低預入額等の条件や、銀行側の審査結果および方針は予告なく変更されることがあります。特定の利率・条件を保証するものではありません。</p>
     <p>当社は銀行・金融機関ではなく、口座開設・監査資料等の代行を行う事業者です。預金の受入れ、投資助言・勧誘、税務・法律に関するご相談は行いません。税務上の取り扱いは、お客様の居住国の税理士等の専門家にご相談ください。</p>
     <p>企業情報：<a href="https://www.mds-fund.com/legal" rel="noopener">https://www.mds-fund.com/legal</a></p>
@@ -629,6 +644,7 @@
   }
   function closeM(){ overlay.hidden=true; document.body.style.overflow=''; dismissed=true; }
   $('openModal').addEventListener('click',openM);
+  $('openModal2').addEventListener('click',()=>{ dismissed=true; openM(); });
   $('closeModal').addEventListener('click',closeM);
   $('closeModal2').addEventListener('click',closeM);
   overlay.addEventListener('click',e=>{ if(e.target===overlay) closeM(); });
@@ -649,7 +665,14 @@
   }
 
   submitBtn.addEventListener('click',()=>{
-    $('doneText').textContent=$('mName').value.trim()+'様　'+slot+'　オンライン15分／'+mjob;
+    const name=$('mName').value.trim(), mail=$('mMail').value.trim(), tel=$('mTel').value.trim();
+    const sim = data ? '試算条件: 初回'+(+init.value||0)+'万円 / 毎年'+(+annual.value||0)+'万円 / 年'+data.r+'% / '+years.value+'年' : '試算なし';
+    const body=['お名前: '+name,'メールアドレス: '+mail,'電話番号: '+tel,'ご職業: '+mjob,
+      'ご希望の日時: '+slot,'','---',sim,'送信元: '+location.href].join('\r\n');
+    location.href='mailto:hello@aisupports.cc'
+      +'?subject='+encodeURIComponent('【面談申込】'+name+'様 '+slot)
+      +'&body='+encodeURIComponent(body);
+    $('doneText').innerHTML='メールソフトが開きます。内容をご確認のうえ、そのまま送信してください。<br>開かない場合は <b>hello@aisupports.cc</b> まで直接ご連絡ください。';
     document.querySelectorAll('.modal > :not(.done):not(.close)').forEach(el=>el.hidden=true);
     $('done').hidden=false;
   });
