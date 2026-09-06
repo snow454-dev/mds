@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ドバイ銀行口座開設サポート｜「安全」「増える」の根拠を先に説明します｜AISupports（MDS正規代理店）</title>
+<meta name="description" content="UAEの銀行口座が「安全」で「資金が増える」と言われる理由を、中央銀行の規制・ドル連動・金利差の3点から根拠つきで説明。非居住者の日本人向けに日本語で開設をサポートします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213D;        /* 濃紺：本文・見出し */
+    --ink-2:#4A5568;      /* 補足テキスト */
+    --paper:#FFFFFF;
+    --band:#EEF2F6;       /* セクション帯 */
+    --line:#D5DCE4;
+    --gold:#B8935A;       /* ドバイの砂・金。罫線と強調に少量だけ */
+    --verify:#1F7A5C;     /* 根拠あり */
+    --caution:#9C4A1A;    /* 注意・リスク */
+    --serif:"Noto Serif JP", "Hiragino Mincho ProN", serif;
+    --sans:"Noto Sans JP", "Hiragino Sans", sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.4;letter-spacing:.01em}
+  h2{font-size:1.75rem;margin-bottom:.6rem}
+  h3{font-size:1.15rem}
+  p{max-width:38em}
+  .lead{color:var(--ink-2);max-width:40em}
+  section{padding:88px 0}
+  .band{background:var(--band)}
+  .btn{display:inline-block;font-weight:700;text-decoration:none;padding:16px 28px;border-radius:4px;background:var(--ink);color:#fff;font-size:1rem}
+  .btn:hover{background:#1E2F55}
+  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  /* header */
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--serif);font-weight:700;font-size:1.05rem}
+  .brand small{display:block;font-family:var(--sans);font-weight:400;font-size:.72rem;color:var(--ink-2);line-height:1.2}
+  .nav a.cta{font-size:.9rem;padding:10px 18px}
+
+  /* hero */
+  .hero{padding:96px 0 72px}
+  .hero h1{font-size:clamp(1.9rem,4.2vw,3rem);max-width:20em;margin-bottom:24px}
+  .hero .lead{font-size:1.05rem;margin-bottom:36px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-note{font-size:.85rem;color:var(--ink-2);margin-top:18px}
+
+  /* ledger: 主張 / 根拠 */
+  .ledger{border-top:2px solid var(--ink)}
+  .row{display:grid;grid-template-columns:5fr 7fr;gap:48px;padding:56px 0;border-bottom:1px solid var(--line)}
+  .claim{font-family:var(--serif);font-size:1.5rem;font-weight:700;line-height:1.5}
+  .claim .q{display:block;color:var(--ink-2);font-family:var(--sans);font-weight:400;font-size:.95rem;margin-bottom:10px}
+  .claim .q::before{content:"「";}
+  .claim .q::after{content:"」と思われる方へ";}
+  .evidence h3{margin-bottom:12px}
+  .evidence ul{list-style:none;margin:16px 0}
+  .evidence li{position:relative;padding-left:28px;margin-bottom:12px;max-width:38em}
+  .evidence li::before{content:"";position:absolute;left:0;top:.7em;width:16px;height:16px;border-radius:50%;background:var(--verify)}
+  .evidence li::after{content:"";position:absolute;left:5px;top:calc(.7em + 4px);width:6px;height:3px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+  .evidence li.caution::before{background:var(--caution)}
+  .evidence li.caution::after{content:"!";border:0;color:#fff;font-size:11px;font-weight:700;left:6px;top:calc(.7em - 1px);transform:none;width:auto;height:auto}
+  .evidence .fine{font-size:.85rem;color:var(--ink-2);border-left:3px solid var(--gold);padding-left:14px;margin-top:18px}
+
+  /* rate figure */
+  .fig{margin:28px 0 8px;max-width:520px}
+  .bar{display:grid;grid-template-columns:8em 1fr 5em;align-items:center;gap:12px;margin-bottom:12px;font-size:.92rem}
+  .bar .track{height:14px;background:#E3E8EE;border-radius:2px;overflow:hidden}
+  .bar .fill{height:100%;background:var(--ink)}
+  .bar.uae .fill{background:var(--verify)}
+  .bar b{text-align:right;font-variant-numeric:tabular-nums}
+  .fig-cap{font-size:.8rem;color:var(--ink-2)}
+
+  /* steps */
+  .steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+  .step{border-top:2px solid var(--ink);padding-top:16px}
+  .step::before{counter-increment:step;content:counter(step);font-family:var(--serif);font-size:1.6rem;font-weight:700;display:block;margin-bottom:8px}
+  .step h3{font-size:1.05rem;margin-bottom:6px}
+  .step p{font-size:.92rem;color:var(--ink-2)}
+
+  /* fee table */
+  table{width:100%;border-collapse:collapse;margin-top:28px;font-size:.95rem}
+  th,td{text-align:left;padding:16px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-weight:500;color:var(--ink-2);width:30%}
+  .ph{background:#FFF7E8;color:var(--caution);padding:1px 6px;border-radius:2px;font-size:.85em}
+
+  /* risks */
+  .risk{border:1.5px solid var(--caution);border-radius:4px;padding:32px;background:#fff;margin-top:32px}
+  .risk h3{color:var(--caution);margin-bottom:12px}
+  .risk ol{padding-left:1.4em}
+  .risk li{margin-bottom:10px;max-width:40em}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line);padding:18px 0}
+  summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";color:var(--ink-2);flex-shrink:0}
+  details[open] summary::after{content:"－"}
+  details p{margin-top:12px;color:var(--ink-2)}
+
+  /* about / cta */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .cta-block{background:var(--ink);color:#fff;padding:72px 0}
+  .cta-block h2{color:#fff}
+  .cta-block .lead{color:#C9D2E0}
+  .cta-block .btn{background:#fff;color:var(--ink)}
+  .cta-block .btn:hover{background:#EEF2F6}
+  footer{padding:32px 0;font-size:.8rem;color:var(--ink-2);border-top:1px solid var(--line)}
+  footer p{max-width:none}
+
+  @media (max-width:800px){
+    section{padding:64px 0}
+    .row{grid-template-columns:1fr;gap:20px;padding:40px 0}
+    .steps{grid-template-columns:1fr 1fr}
+    .about{grid-template-columns:1fr}
+    .hero{padding:64px 0 48px}
+    th{width:38%}
+  }
+  @media (max-width:520px){.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">ドバイ銀行口座開設サポート<small>AISupports ／ MDS Fund LLC 正規代理店</small></div>
+    <a class="btn cta" href="#sim">残高をシミュレーションする</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>「海外の銀行で資金が増える」と聞いて、まず疑った方のためのページです。</h1>
+    <p class="lead">UAE（ドバイ）の銀行口座は、日本の銀行より高い預金金利が付き、しかも非居住者の日本人でも開設できます。怪しく聞こえるのは当然です。だからこのページでは、メリットの宣伝より先に「なぜそうなるのか」の仕組みと、隠さずお伝えすべきリスクを説明します。</p>
+    <div class="hero-actions">
+      <a class="btn" href="#sim">残高をシミュレーションする</a>
+      <a class="btn ghost" href="#why">仕組みを先に読む</a>
+    </div>
+    <p class="hero-note">シミュレーションは登録不要・その場で結果が出ます。金利はご自身で動かして、為替が変わった場合の円換算まで確認できます。</p>
+  </div>
+</section>
+
+<section id="why" class="band">
+  <div class="wrap">
+    <h2>「怪しい」と感じる3つの点と、その根拠</h2>
+    <p class="lead">左に、よくいただく疑問をそのまま書きました。右がその答えです。緑の印は公的な制度や市場の仕組みで説明できる点、橙の印はご自身で判断していただくべき点です。</p>
+
+    <div class="ledger" style="margin-top:40px">
+
+      <div class="row">
+        <div class="claim"><span class="q">中東の銀行に預けて、本当に安全なのか</span>安全性は「国の信用」と「監督の厳しさ」で決まります。UAEはどちらも先進国水準です。</div>
+        <div class="evidence">
+          <h3>UAEの銀行が守られている仕組み</h3>
+          <ul>
+            <li>すべての銀行はUAE中央銀行（CBUAE）の免許制で、国際基準（バーゼルIII）の自己資本規制を受けています。日本の金融庁が銀行を監督するのと同じ構造です。</li>
+            <li>主要行（First Abu Dhabi Bank、Emirates NBD など）はアブダビ・ドバイの政府系ファンドが大株主です。政府が株主として銀行を支える体制になっています。</li>
+            <li>UAEの通貨ディルハムは1997年から米ドルに固定（1ドル＝3.6725ディルハム）されており、通貨危機の履歴がありません。</li>
+            <li>2008年の金融危機時、UAE政府は国内銀行の預金保護を表明し、実際に預金者の損失は出ていません。</li>
+            <li class="caution">日本の預金保険（1,000万円まで保護）のような明文化された預金保険制度は、UAEにはありません。「政府が支える」実績はあっても、法律で保証された上限額はない点は正直にお伝えします。</li>
+          </ul>
+          <p class="fine">ご紹介する銀行は、CBUAE免許を持つ大手行に限定しています。当社が独自に「安全」と判断しているのではなく、格付機関と中央銀行の公開情報に基づいて選んでいます。</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="claim"><span class="q">預けるだけで増えるなんて、うますぎる</span>増えるのは「魔法」ではなく「金利差」です。日本が低すぎるだけで、世界では普通の水準です。</div>
+        <div class="evidence">
+          <h3>なぜUAEの定期預金は日本より高い金利になるのか</h3>
+          <ul>
+            <li>ディルハムは米ドルに固定されているため、UAEの金利はほぼ米国の金利水準に連動します。米ドル建て資産と同じ利回りが、ドル固定の通貨で得られる構造です。</li>
+            <li>UAE国内では銀行同士の預金獲得競争が活発で、定期預金の金利が市場で公開・比較されています。誰でも各行のサイトで確認できます。</li>
+            <li>イスラム銀行の定期商品は「利子」ではなく「運用益の分配」という形をとりますが、中央銀行の同じ規制下にあり、期待利回りが事前に提示されます。</li>
+            <li class="caution">増えるのは「ディルハム（≒米ドル）建て」でです。円に戻すときの為替レートで、円ベースの受取額は上下します。元本割れの主因はほぼ為替です。</li>
+          </ul>
+          <div class="fig" aria-label="定期預金金利の比較">
+            <div class="bar"><span>日本のメガバンク 1年定期</span><div class="track"><div class="fill" style="width:5%"></div></div><b>約0.2〜0.3%</b></div>
+            <div class="bar uae"><span>UAE大手行 12か月定期</span><div class="track"><div class="fill" style="width:78%"></div></div><b>約3〜4.75%</b></div>
+            <p class="fig-cap">2026年時点の各行公表レートの目安。銀行・期間・預入額・キャンペーンで変動します。実際の金利は口座開設時に銀行が提示する条件が優先されます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="claim"><span class="q">現地に住んでいない日本人が、なぜ口座を持てるのか</span>非居住者向けの口座枠が制度として存在し、日本語で手続きを代行できる体制があるからです。</div>
+        <div class="evidence">
+          <h3>非居住者でも開設できる理由</h3>
+          <ul>
+            <li>UAEの複数の大手行は、外国人非居住者向けの口座区分を正式に設けています。国際金融センターとして海外資金を受け入れる方針が国策だからです。</li>
+            <li>本サービスはMDS Fund LLC（ドバイ現地法人）が銀行との窓口を担当し、当社は日本側の相談・書類準備を日本語でサポートします。</li>
+            <li>パスポート、住所証明、資金の出所を示す書類など、必要書類は事前にリスト化してお渡しします。書類不備での差し戻しを防ぐのが当社の役割です。</li>
+            <li class="caution">審査は銀行が行います。職業・資金の出所・過去の取引によっては開設できないことがあり、その場合は事前診断の段階でお伝えします。</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="wrap">
+    <h2>開設までの流れ</h2>
+    <p class="lead">来訪不要のプランと、渡航して開設するプランがあります。ご希望と銀行の条件で選びます。</p>
+    <div class="steps">
+      <div class="step"><h3>残高シミュレーション</h3><p>このページ上で、ご自身の金額と金利で試算します。結果をもとに、候補銀行と必要書類をご案内します。</p></div>
+      <div class="step"><h3>書類準備</h3><p>必要書類のリストと記入例をお渡しします。翻訳・認証が必要な書類は当社が手配します。</p></div>
+      <div class="step"><h3>銀行審査</h3><p>MDS現地チームが銀行へ提出。追加質問があれば日本語で仲介します。目安2〜6週間。</p></div>
+      <div class="step"><h3>口座開設・入金</h3><p>口座番号の発行後、日本からの送金方法と定期預金の設定までサポートします。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="fee">
+  <div class="wrap">
+    <h2>料金と条件</h2>
+    <p class="lead">料金は開設サポートに対する報酬です。預入資金は銀行口座に直接入金され、当社やMDSが預かることはありません。</p>
+    <table>
+      <tr><th>開設サポート料</th><td><span class="ph">要確認：MDS規定料金</span>（診断・書類準備・銀行との仲介・開設後の初回設定まで含む）</td></tr>
+      <tr><th>成功報酬か着手金か</th><td><span class="ph">要確認：MDS契約条件</span></td></tr>
+      <tr><th>最低預入額の目安</th><td>銀行により異なります（<span class="ph">要確認</span>）。定期預金は多くの銀行で1万ディルハム（約40万円）程度から。</td></tr>
+      <tr><th>開設に必要な期間</th><td>2〜6週間（銀行審査の状況によります）</td></tr>
+      <tr><th>お支払い先</th><td>AISupports（日本国内・円建て）</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="risk">
+  <div class="wrap">
+    <h2>お申し込み前に必ずお読みください</h2>
+    <p class="lead">ここに書いたことを読んだうえで「それでも検討したい」と思われた方に、はじめてシミュレーションをおすすめしています。</p>
+    <div class="risk">
+      <h3>ご自身で判断していただく必要がある6つのリスク</h3>
+      <ol>
+        <li><strong>為替リスク</strong>：ディルハムは米ドル固定のため、実質は円／ドルの変動をそのまま受けます。円高になれば円ベースで元本割れします。</li>
+        <li><strong>日本での課税</strong>：日本の居住者は、海外で受け取った利子も日本で申告・納税が必要です。UAEで非課税でも、日本では非課税になりません。</li>
+        <li><strong>国外財産調書・CRS</strong>：海外資産の合計が5,000万円を超えると国外財産調書の提出義務があります。また、UAEと日本は口座情報を自動交換（CRS）しており、口座は税務当局に把握されます。「隠す」目的では使えません。</li>
+        <li><strong>預金保険がない</strong>：日本のような法定の預金保護制度はありません。大手行に限定し、必要なら複数行に分散することをおすすめします。</li>
+        <li><strong>中途解約ペナルティ</strong>：定期預金を満期前に解約すると、金利が減額または無利息になる場合があります。</li>
+        <li><strong>金利は変動します</strong>：米国の利下げ局面では、UAEの定期預金金利も下がります。現在の金利が将来も続く保証はありません。</li>
+      </ol>
+      <p style="margin-top:20px;font-size:.9rem;color:var(--ink-2)">当社は銀行口座開設の手続きをサポートする事業者であり、金融商品の販売・投資助言は行いません。税務についてはお客様の税理士、または当社提携の国際税務に詳しい税理士をご紹介します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap">
+    <h2>よくある質問</h2>
+    <div style="margin-top:24px;max-width:760px">
+      <details><summary>「最大8%」という金利を他で見ましたが、本当ですか？</summary><p>2026年時点で大手行が一般に公表している12か月定期の金利は年3〜4.75%程度です。それを大きく超える数字は、特定の条件付きキャンペーン、預金以外の商品、あるいは古い情報の可能性があります。当社は口座開設時に銀行が書面で提示する金利のみをご案内し、それ以外の数字は「確認できていない」とお伝えします。</p></details>
+      <details><summary>日本語しか話せなくても大丈夫ですか？</summary><p>はい。銀行とのやり取りはMDSの現地チームと当社が日本語で仲介します。ただし開設後のインターネットバンキングは英語です。初回設定と基本操作は日本語でご案内します。</p></details>
+      <details><summary>ドバイに行く必要はありますか？</summary><p>銀行と口座の種類によります。渡航不要で開設できる銀行と、本人確認のため一度の来訪が必要な銀行があります。診断時にご希望に合わせてご提案します。</p></details>
+      <details><summary>MDSとAISupportsの関係は？</summary><p>MDS Fund LLCはドバイの現地法人で、銀行との窓口・現地手続きを担当します。AISupportsは北海道を拠点とするMDSの正規代理店で、日本側の相談窓口・書類準備・日本語サポートを担当します。お客様の窓口は一貫して当社です。</p></details>
+      <details><summary>資金を当社やMDSに預けることはありますか？</summary><p>ありません。資金はお客様名義の銀行口座に、お客様ご自身が送金します。当社が受け取るのはサポート料のみです。</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>運営について</h2>
+      <p class="lead">AISupportsは北海道を拠点に、中小企業向けのAI・DX支援を行っている事業者です。代表はヨーロッパ・中国での勤務経験と、地域金融機関でのDX専任担当の経歴を持ちます。海外口座という「聞き慣れないもの」を、金融機関で働いた経験をもとに、根拠を示しながら説明することを大切にしています。</p>
+    </div>
+    <div>
+      <h3 style="margin-bottom:12px">MDS Fund LLC について</h3>
+      <p class="lead">ドバイに拠点を置く現地法人。UAE銀行口座の開設サポートを日本人向けに提供しており、当社はその正規代理店として日本側の窓口を務めています。<span class="ph">要確認：MDSの登記情報・ライセンス番号・実績数を掲載</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="sim">
+  <div class="wrap">
+    <h2>残高シミュレーション</h2>
+    <p class="lead">ご自身の金額で、年ごとに残高がどう変わるかを表で確認できます。ドバイと日本を切り替えて、同じ条件で並べて比べてください。</p>
+
+    <div class="sim">
+      <div class="sim-form">
+        <div class="field">
+          <span class="label">あなたの職業</span>
+          <div class="choice" role="radiogroup" aria-label="職業">
+            <button type="button" class="opt on" data-job="会社員">会社員</button>
+            <button type="button" class="opt" data-job="経営者・事業主">経営者や事業主</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="init">最初に移す金額</label>
+          <div class="input"><input id="init" type="number" inputmode="numeric" min="0" step="10" placeholder="例: 300"><span>万円</span></div>
+        </div>
+        <div class="field">
+          <label class="label" for="annual">毎年の積み増し</label>
+          <div class="input"><input id="annual" type="number" inputmode="numeric" min="0" step="10" placeholder="例: 100"><span>万円</span></div>
+        </div>
+        <div class="field">
+          <label class="label" for="rate">ドバイの金利（年） <output id="rateOut">4</output>%</label>
+          <input id="rate" type="range" min="4.0" max="8.0" step="0.05" value="4.0">
+          <p class="fig-cap" id="rateNote">2026年時点でUAE大手行が公表している12か月定期は年3〜4.75%程度です。それを超える金利は、特定の銀行・条件・キャンペーンに限られます。</p>
+        </div>
+        <div class="field">
+          <label class="label" for="years">期間 <output id="yearsOut">30</output>年</label>
+          <input id="years" type="range" min="5" max="40" step="1" value="30">
+        </div>
+        <button type="button" class="btn" id="run" disabled>シミュレーションする</button>
+      </div>
+
+      <div class="sim-result" id="result" hidden>
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab on" id="tabUae" role="tab" aria-selected="true">ドバイの場合</button>
+          <button type="button" class="tab" id="tabJp" role="tab" aria-selected="false">日本の場合</button>
+        </div>
+        <p class="tab-note">年利 <b id="shownRate">4.0</b>% ／ 利息を毎年そのまま預け直した場合（複利）</p>
+
+        <div class="table-scroll">
+          <table class="yr">
+            <thead><tr><th>年</th><th class="num">年初の残高</th><th class="num">その年の利息</th><th class="num">年末の残高</th></tr></thead>
+            <tbody id="yrBody"></tbody>
+          </table>
+        </div>
+
+        <div class="summary">
+          <h3><span id="sumYears">30</span>年後の差</h3>
+          <div class="cards">
+            <div class="card win"><span>ドバイ（<span id="cardRate">4.0</span>%）</span><b id="cardUae">0</b></div>
+            <div class="card"><span>日本（0.25%）</span><b id="cardJp">0</b></div>
+          </div>
+          <p class="diff">差額 <b id="cardDiff">0</b>　／　うちご自身で預けた元本 <b id="cardPrincipal">0</b></p>
+
+          <h3 style="margin-top:28px">最終年に受け取る利息（1年分）</h3>
+          <div class="cards">
+            <div class="card win"><span>ドバイ</span><b id="incUae">0</b></div>
+            <div class="card"><span>日本</span><b id="incJp">0</b></div>
+          </div>
+          <p class="fig-cap" style="margin-top:10px">元本に手をつけず、その年の利息だけを受け取った場合の金額です。生活費に充てられるかどうかの目安としてご覧ください。</p>
+        </div>
+
+        <div class="fx">
+          <h3>為替が動いた場合の円換算</h3>
+          <table>
+            <tr><th>円安（ドル +10%）</th><td><b id="fxUp">0</b></td></tr>
+            <tr><th>為替が変わらない</th><td><b id="fxFlat">0</b></td></tr>
+            <tr><th>円高（ドル −10%）</th><td><b id="fxDown">0</b></td></tr>
+            <tr><th>円高（ドル −20%）</th><td><b id="fxDown2">0</b> <span id="fxWarn" class="ph" hidden>元本を下回ります</span></td></tr>
+          </table>
+          <p class="fig-cap" style="margin-top:12px">ディルハムは米ドルに固定されているため、円／ドルの変動がそのまま反映されます。上の表の金額はすべて為替一定で計算しています。</p>
+        </div>
+
+        <div class="next">
+          <p id="jobNote"></p>
+          <p style="margin-top:14px">この試算は目安です。実際の金利・日本での課税・送金手数料は反映していません。金利は預入額・期間・銀行によって異なり、満期時に同じ金利で継続できるとは限りません。</p>
+        </div>
+
+        <div class="book">
+          <h3>ドバイで口座を持ちたい方へ</h3>
+          <p>必要書類と口座の種類は、職業や資金の出所によって変わります。この結果を見ながら15分ほどオンラインでご説明します。</p>
+          <button type="button" class="btn" id="openModal">15分の面談を予約する</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="close" id="closeModal" aria-label="閉じる">×</button>
+    <h3 id="modalTitle">ドバイの銀行口座開設について、15分でご説明します</h3>
+    <p class="modal-lead">ご相談は無料です。開設の見込みがない場合は、その場でお伝えして終わります。</p>
+
+    <div class="mfield"><label for="mName">お名前</label><input id="mName" type="text" placeholder="山田 太郎" autocomplete="name"></div>
+    <div class="mfield"><label for="mMail">メールアドレス</label><input id="mMail" type="email" placeholder="example@email.com" autocomplete="email"></div>
+    <div class="mfield"><label for="mTel">電話番号</label><input id="mTel" type="tel" placeholder="090-1234-5678" autocomplete="tel"></div>
+    <div class="mfield">
+      <label for="mJob">ご職業</label>
+      <div class="choice" id="mJobWrap" role="radiogroup" aria-label="ご職業">
+        <button type="button" class="opt" data-mjob="会社員">会社員</button>
+        <button type="button" class="opt" data-mjob="経営者">経営者</button>
+      </div>
+    </div>
+    <div class="mfield">
+      <span class="mlabel">ご希望の日時</span>
+      <div class="slots" id="slots" role="radiogroup" aria-label="ご希望の日時"></div>
+    </div>
+
+    <p class="mnote">預入額が200万円を下回る場合、送金手数料と維持コストで利息が相殺されるため、当社ではおすすめしていません。</p>
+
+    <button type="button" class="btn" id="submitBtn" disabled>この内容で予約する</button>
+    <button type="button" class="btn ghost close-b" id="closeModal2">閉じる</button>
+
+    <div class="done" id="done" hidden>
+      <h3>予約を受け付けました</h3>
+      <p id="doneText"></p>
+      <p class="fig-cap" style="margin-top:14px">※これはモックアップです。実際の送信は行われていません。</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sim{display:grid;grid-template-columns:5fr 7fr;gap:48px;margin-top:40px;align-items:start}
+  .sim-form{border-top:2px solid var(--ink);padding-top:24px;position:sticky;top:88px}
+  .field{margin-bottom:24px}
+  .label{display:block;font-weight:700;margin-bottom:10px}
+  .choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .opt{font:inherit;padding:14px;border:1.5px solid var(--line);background:#fff;border-radius:4px;cursor:pointer;color:var(--ink)}
+  .opt.on{border-color:var(--ink);background:var(--ink);color:#fff}
+  .input{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:4px;background:#fff;padding:0 14px}
+  .input input{font:inherit;font-size:1.1rem;border:0;outline:0;flex:1;padding:14px 0;min-width:0;background:transparent;color:var(--ink)}
+  .input span{color:var(--ink-2)}
+  input[type=range]{width:100%;accent-color:var(--ink)}
+  #run{width:100%}
+  #run:disabled{background:#C9D2E0;cursor:not-allowed}
+  #rateNote.hi{color:var(--caution)}
+  #rateNote.hi::before{content:"この金利は大手行の公表定期預金レートでは確認できていません。適用条件を必ずご確認ください。";display:block;font-weight:700}
+
+  .sim-result{border-top:2px solid var(--verify);padding-top:24px}
+  .tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden}
+  .tab{font:inherit;font-weight:700;padding:14px;background:#fff;border:0;cursor:pointer;color:var(--ink-2)}
+  .tab.on{background:var(--ink);color:#fff}
+  .tab-note{font-size:.9rem;color:var(--ink-2);margin:14px 0 4px}
+  .table-scroll{max-height:340px;overflow:auto;border:1px solid var(--line);border-radius:4px}
+  table.yr{margin:0;font-size:.92rem}
+  table.yr thead th{position:sticky;top:0;background:var(--band);font-weight:700;color:var(--ink);width:auto;padding:12px}
+  table.yr td{padding:11px 12px;font-variant-numeric:tabular-nums}
+  table.yr .num{text-align:right}
+  table.yr .int{color:var(--verify);font-weight:700}
+  table.yr tbody tr:nth-child(even){background:#FAFBFC}
+
+  .summary{margin-top:32px}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+  .card{border:1.5px solid var(--line);border-radius:4px;padding:18px;text-align:center}
+  .card.win{border-color:var(--verify);background:#F3FAF7}
+  .card span{display:block;font-size:.85rem;color:var(--ink-2);margin-bottom:6px}
+  .card b{font-family:var(--serif);font-size:1.7rem;font-variant-numeric:tabular-nums}
+  .card.win b{color:var(--verify)}
+  .diff{margin-top:12px;font-size:.92rem;color:var(--ink-2)}
+
+  .fx{margin-top:32px}
+  .fx th{width:45%}
+  .fx td b{font-variant-numeric:tabular-nums}
+  .next{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);color:var(--ink-2);font-size:.93rem}
+  .book{margin-top:32px;border:1.5px solid var(--ink);border-radius:4px;padding:28px;background:var(--paper)}
+  .book h3{margin-bottom:8px}
+  .book p{font-size:.93rem;color:var(--ink-2);margin-bottom:18px}
+  .book .btn{width:100%}
+
+  .overlay{position:fixed;inset:0;background:rgba(20,33,61,.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:50;overflow:auto}
+  .modal{background:#fff;border-radius:6px;padding:36px;max-width:520px;width:100%;position:relative;max-height:92vh;overflow:auto}
+  .modal h3{font-size:1.25rem;margin-bottom:8px;padding-right:24px}
+  .modal-lead{font-size:.9rem;color:var(--ink-2);margin-bottom:24px}
+  .close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--ink-2);line-height:1}
+  .mfield{margin-bottom:18px}
+  .mfield label,.mlabel{display:block;font-weight:700;font-size:.9rem;margin-bottom:8px}
+  .mfield input[type=text],.mfield input[type=email],.mfield input[type=tel]{width:100%;font:inherit;padding:14px;border:1.5px solid var(--line);border-radius:4px;background:#fff;color:var(--ink)}
+  .slots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .slot{font:inherit;font-size:.9rem;padding:12px 8px;border:1.5px solid var(--line);background:#fff;border-radius:4px;cursor:pointer;color:var(--ink)}
+  .slot.on{border-color:var(--ink);background:var(--ink);color:#fff}
+  .mnote{border:1.5px solid var(--caution);color:var(--caution);border-radius:4px;padding:14px;font-size:.88rem;font-weight:700;margin:22px 0;line-height:1.7}
+  .modal .btn{width:100%}
+  .modal .btn:disabled{background:#C9D2E0;cursor:not-allowed}
+  .close-b{margin-top:10px}
+  .done{text-align:center;padding:20px 0}
+
+  @media (max-width:800px){
+    .sim{grid-template-columns:1fr;gap:32px}
+    .sim-form{position:static}
+    .card b{font-size:1.4rem}
+    .modal{padding:26px 20px}
+  }
+</style>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const init=$('init'),annual=$('annual'),rate=$('rate'),years=$('years'),run=$('run'),result=$('result');
+  const JP=0.0025;
+  let job='会社員', view='uae', data=null;
+
+  document.querySelectorAll('.sim-form .opt').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.sim-form .opt').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); job=b.dataset.job;
+  }));
+
+  const man=n=>{ n=Math.round(n);
+    return n>=10000 ? (n/10000).toFixed(n>=100000?0:1)+'億円' : n.toLocaleString('ja-JP')+'万円'; };
+  const num=n=>Math.round(n).toLocaleString('ja-JP');
+
+  const check=()=>{ run.disabled = !((+init.value>0)||(+annual.value>0)); };
+  [init,annual].forEach(el=>el.addEventListener('input',check));
+  rate.addEventListener('input',()=>{
+    $('rateOut').textContent=(+rate.value).toFixed(2).replace(/0+$/,'').replace(/\.$/,'');
+    $('rateNote').classList.toggle('hi', +rate.value>4.75);
+  });
+  years.addEventListener('input',()=>$('yearsOut').textContent=years.value);
+
+  function series(p0,add,r,n){
+    const rows=[]; let bal=p0;
+    for(let y=1;y<=n;y++){
+      const open=bal, int=open*r, close=open+int+add;
+      rows.push({y,open,int,close}); bal=close;
+    }
+    return rows;
+  }
+
+  function render(){
+    if(!data) return;
+    const rows = view==='uae' ? data.uae : data.jp;
+    $('yrBody').innerHTML = rows.map(x=>
+      `<tr><td>${x.y}年</td><td class="num">${num(x.open)}</td><td class="num int">+${num(x.int)}</td><td class="num"><b>${num(x.close)}</b></td></tr>`
+    ).join('');
+    $('shownRate').textContent = view==='uae' ? data.r : '0.25';
+    $('tabUae').classList.toggle('on',view==='uae');
+    $('tabJp').classList.toggle('on',view==='jp');
+    $('tabUae').setAttribute('aria-selected',view==='uae');
+    $('tabJp').setAttribute('aria-selected',view==='jp');
+  }
+
+  $('tabUae').addEventListener('click',()=>{view='uae';render();});
+  $('tabJp').addEventListener('click',()=>{view='jp';render();});
+
+  run.addEventListener('click',()=>{
+    const p0=+init.value||0, add=+annual.value||0, r=+rate.value/100, n=+years.value;
+    const uae=series(p0,add,r,n), jp=series(p0,add,JP,n);
+    const uEnd=uae[n-1].close, jEnd=jp[n-1].close, principal=p0+add*n;
+    data={uae,jp,r:(+rate.value).toFixed(2).replace(/0+$/,'').replace(/\.$/,'')};
+
+    $('sumYears').textContent=n; $('yearsOut').textContent=n;
+    $('cardRate').textContent=data.r;
+    $('cardUae').textContent=man(uEnd);
+    $('cardJp').textContent=man(jEnd);
+    $('cardDiff').textContent=man(uEnd-jEnd);
+    $('cardPrincipal').textContent=man(principal);
+    $('incUae').textContent=man(uae[n-1].int);
+    $('incJp').textContent=man(jp[n-1].int);
+    $('fxUp').textContent=man(uEnd*1.1); $('fxFlat').textContent=man(uEnd);
+    $('fxDown').textContent=man(uEnd*0.9); $('fxDown2').textContent=man(uEnd*0.8);
+    $('fxWarn').hidden = !(uEnd*0.8 < principal);
+    $('jobNote').textContent = job==='会社員'
+      ? '会社員の方は、源泉徴収票や給与明細が資金の出所を示す書類になります。個人名義で、渡航が不要な銀行から候補を絞ります。'
+      : '経営者・事業主の方は、決算書や納税証明が資金の出所を示す書類になります。法人名義の口座という選択肢もあります。';
+    view='uae'; result.hidden=false; render();
+    result.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  });
+
+  // ---- 面談予約モーダル ----
+  const overlay=$('overlay'), slots=$('slots'), submitBtn=$('submitBtn');
+  let mjob='', slot='';
+  const days=['日','月','火','水','木','金','土'];
+  (function buildSlots(){
+    const out=[]; const d=new Date(); let added=0, i=3;   // 当日から3日以上先のみ
+    while(added<4 && i<21){
+      const t=new Date(d.getFullYear(),d.getMonth(),d.getDate()+i);
+      if(t.getDay()!==0){
+        const lbl=`${t.getMonth()+1}/${t.getDate()}（${days[t.getDay()]}）${added%2?'19:00':'11:00'}`;
+        out.push(`<button type="button" class="slot" data-slot="${lbl}">${lbl}</button>`); added++;
+      }
+      i++;
+    }
+    slots.innerHTML=out.join('');
+    slots.querySelectorAll('.slot').forEach(b=>b.addEventListener('click',()=>{
+      slots.querySelectorAll('.slot').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on'); slot=b.dataset.slot; validate();
+    }));
+  })();
+  document.querySelectorAll('#mJobWrap .opt').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#mJobWrap .opt').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); mjob=b.dataset.mjob; validate();
+  }));
+  function validate(){
+    const ok = $('mName').value.trim() && /.+@.+\..+/.test($('mMail').value) && $('mTel').value.trim().length>=10 && mjob && slot;
+    submitBtn.disabled=!ok;
+  }
+  ['mName','mMail','mTel'].forEach(id=>$(id).addEventListener('input',validate));
+
+  function openM(){
+    overlay.hidden=false; document.body.style.overflow='hidden';
+    if(job && !mjob){
+      const pre=job==='会社員'?'会社員':'経営者';
+      const b=[...document.querySelectorAll('#mJobWrap .opt')].find(x=>x.dataset.mjob===pre);
+      if(b){b.classList.add('on'); mjob=pre;}
+    }
+    validate(); $('mName').focus();
+  }
+  function closeM(){ overlay.hidden=true; document.body.style.overflow=''; }
+  $('openModal').addEventListener('click',openM);
+  $('closeModal').addEventListener('click',closeM);
+  $('closeModal2').addEventListener('click',closeM);
+  overlay.addEventListener('click',e=>{ if(e.target===overlay) closeM(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!overlay.hidden) closeM(); });
+
+  submitBtn.addEventListener('click',()=>{
+    $('doneText').textContent=`${$('mName').value.trim()}様　${slot}　オンライン15分／${mjob}`;
+    document.querySelectorAll('.modal > :not(.done):not(.close)').forEach(el=>el.hidden=true);
+    $('done').hidden=false;
+  });
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <p>AISupports（屋号：mlm agency）／ 北海道 ／ MDS Fund LLC 正規代理店</p>
+    <p style="margin-top:8px">本ページは銀行口座開設の手続きサポートに関する案内であり、特定の金融商品の勧誘・投資助言ではありません。記載の金利は2026年時点の各行公表情報の目安であり、将来の受取額を保証するものではありません。為替変動により円ベースで元本を下回ることがあります。</p>
+  </div>
+</footer>
+
+</body>
+</html>
